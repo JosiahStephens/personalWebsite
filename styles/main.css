@@ -347,16 +347,32 @@ section {
   cursor: pointer;
   display: inline-block;
   color: var(--white);
-  /* border: 2px solid var(--navy); */
+  width: 120px;
   font-family: "Open Sans", sans-serif;
   font-size: 14px;
   padding: 1rem 2rem 1.2rem;
   margin-top: 2rem;
 }
 
+a.button {
+  position: relative;
+  display: block;
+  margin: 30px auto 0;
+  padding: 14px 15px;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 0;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
 .button-wrap {
   display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
+  justify-content: space-around;
 }
 
 .scroll-down {
@@ -742,6 +758,9 @@ aside article {
   .project-card:nth-child(4) {
     grid-row: 3;
     grid-column: 2 / span 2;
+  }
+  .button-wrap {
+    flex-wrap: nowrap;
   }
 }
 
