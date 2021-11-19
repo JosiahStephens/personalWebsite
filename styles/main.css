@@ -67,6 +67,10 @@ header.menu-show nav {
   transform: translateX(0);
 }
 
+h1.contact-header {
+  margin-top: 2rem;
+}
+
 header nav ul {
   display: flex;
   flex-direction: column;
@@ -685,10 +689,6 @@ aside article {
     translate: 2px 2px;
   }
 
-  .project-card .panel h3 {
-    margin-top: 0;
-  }
-
   h1 {
     font-size: 5rem;
   }
@@ -761,6 +761,10 @@ aside article {
   }
   .button-wrap {
     flex-wrap: nowrap;
+  }
+
+  .project-card .panel h3 {
+    margin-top: 0;
   }
 }
 
