@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flex Introduction</title>
+  <meta name="description" content="about me">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400&family=Roboto+Slab:wght@700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="apple-touch-icon" sizes="152x152" href="/images/favicon_package/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon_package/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon_package/favicon-16x16.png">
+  <link rel="manifest" href="/images/favicon_package/site.webmanifest">
+  <link rel="mask-icon" href="/images/favicon_package/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      document.querySelector(".menu-icon").addEventListener("click", () => {
+        document.querySelector(".main-menu").classList.toggle("menu-show");
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <header class="main-menu">
+    <div class="menu-icon">
+      <svg viewbox="0 0 60 60">
+        <line x1="5px" y1="30px" x2="55px" y2="30px" />
+        <line x1="5px" y1="30px" x2="55px" y2="30px" />
+        <line x1="15px" y1="30px" x2="45px" y2="30px" />
+        <line x1="15px" y1="30px" x2="45px" y2="30px" />
+        <line x1="5px" y1="30px" x2="55px" y2="30px" />
+      </svg>
+    </div>
+    <nav>
+      <h2 class="hidden">Main Menu</h2>
+      <ul>
+        <li class="grow"><a href="../">Home</a></li>
+        <li><a href="../about/">About</a></li>
+        <li class="grow"><a href="../contact/">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <article>
+      <h1>Flex Box Tutorial</h1>
+      <section>
+        <h2>Introduction</h2>
+
+        <p>
+          Soon after the creation of the World Wide Web, it became apparent that websites needed styling for readability
+          and
+          design. For those reasons, <a href="https://www.w3schools.com/css/css_intro.asp" , target="blank">Cascading
+            Style Sheets</a> (CSS) were invented. These days, CSS is used on most websites.
+          Spacing
+          and alignment is essential to design, and there are many ways accomplish this in CSS. One of those is called a
+          flex box.
+          As described in the name, a CSS flex box is flexible and is generally used as a dynamic way to align and
+          resize
+          content.
+          Although flex boxes are a relatively new addition to CSS, they are supported in <a
+            href="https://caniuse.com/?search=flex" target="blank">all major browsers</a>. In this tutorial, I will show
+          you how to create and use the flex property to position data in rows and columns. By the end you should be
+          able to create a simple column layout using CSS flex boxes.
+        </p>
+      </section>
+      <section>
+        <h2>Flex Containers</h2>
+        <p>
+          HTML has several elements that are meant to hold other elements inside of them, such as <em
+            class="code">&ltdiv&gt</em> ,
+          <em class="code">&ltarticle&gt</em>, <em class="code">&ltsection&gt</em>, and <em
+            class="code">&ltform&gt</em>. When an item is
+          placed in one of these containers, the item is positioned
+          according
+          to the rules and styles of that container. If one of these containers is styled as a flex display, these
+          “container” elements become flex boxes. To do this, assign <em class='code'>display: flex</em> style to the
+          container element that you want to become a flex box.
+        </p>
+        <h3>Basics</h3>
+        <p>By default, block items each start on a new line in HTML. Items that are placed in a flex container, however,
+          are positioned in a horizonal row. Items wrapped in a flex container are called flex items. Below
+          is a <a href="https://codepen.io/" target="blank">CodePen</a> example of a flex container with three flex
+          items. Click on the "CSS" button to see the code. Feel free to change the code and experiement.
+        </p>
+
+        <p class="codepen" data-height="300" data-default-tab="result" data-slug-hash="MWOvwjX" data-editable="true"
+          data-user="josiahstephens"
+          style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+          <span>See the Pen <a href="https://codepen.io/josiahstephens/pen/MWOvwjX">
+              Flex Box Part 1</a> by JJ Stephens (<a href="https://codepen.io/josiahstephens">@josiahstephens</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+        <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+
+        <p>As you can see, the items are in a row. If you don't want the container to align the items horizontally, just
+          add
+          <em class="code">flex-direction:
+            column</em>
+          after <em class="code">display: flex</em> and the items will be displayed vertically.</p>
+      </section>
+      <section>
+        <h2>Spacing</h2>
+        <p>
+          In the example above the flex items were placed right next to each other, but usually there will need
+          to
+          be some spacing added to make the content more readable. One method to accomplish this is <em
+            class="code">justify-content</em>. This attribute controls the spacing in the direction of the flexbox.
+          There are three main ways of spacing out items with <em class="code">justify-content</em>:
+        </p>
+        <dl class="justify-content-definitions">
+          <div>
+            <dt>Space between</dt>
+            <dd>Puts space between every flex item, but no spacing between the edge of the flex box and the
+              items on the edge.</dd>
+          </div>
+          <div>
+            <dt>Space around</dt>
+            <dd>Puts the same amount of spacing around each item. Since the edges of the container do not get
+              spacing, this means that the items on the edge of the container will have half as much spacing between
+              them
+              and
+              the edge compared to the other items in the container.</dd>
+          </div>
+          <div>
+            <dt>Space evenly</dt>
+            <dd>This is very similar to the space around property, but it puts the same amount of spacing between
+              each item — including the edges.</dd>
+          </div>
+        </dl>
+        <p>
+          No one style of spacing is perfect for every situation, but between the three of them you can usually find
+          something that will work for your situation.
+        </p>
+        <p class="codepen" data-height="300" data-default-tab="result" data-slug-hash="BamdNOm" data-editable="true"
+          data-user="josiahstephens"
+          style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+          <span>See the Pen <a href="https://codepen.io/josiahstephens/pen/BamdNOm">
+              Flex Box Part 2</a> by JJ Stephens (<a href="https://codepen.io/josiahstephens">@josiahstephens</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+        <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+
+        <h3>Alignment</h3>
+        <p>
+          Justify content can be used to align content in a flex container as well. The alignment options for <em
+            class="code">justify-content</em> are flex-start, flex-end, and
+          center. But, if you use <em class="code">justify-content</em> to align items, you will not be able to use it
+          to put spacing in
+          between
+          items. To fix this, CSS developers added a gap property to flex boxes. Gap is a flex property that will add a
+          gap of a certain distance between each flex item.
+        </p>
+        <p>
+          Sometimes it is necessary to align items in the opposite direction of the flex box. To do this, use <em
+            class="code">align-items</em>.
+          Like <em class="code">justify-content</em>, <em class="code">align-items</em> can be set to flex-start,
+          flex-end, and center. This is especially useful
+          when
+          trying to align images and text contained in the same flex container.
+        </p>
+      </section>
+      <section>
+        <h2>Wrap</h2>
+        <p>
+          As you start to add more content to your flex container, the container can fill up and overflow. This can make
+          your site look really bad. Splitting the content into more flex boxes is an option, but this isn't a great
+          choice because the whole point of flex boxes is that they are dynamic, meaning that they can adapt to
+          different situations. One option to solve this problem is <em class="code">flex-wrap</em>, which will wrap
+          overflowing content onto the next line. <em class="code">Wrap-reverse</em> is also an option, which wraps in
+          the opposite direction as normal. In the example below, click on the CSS button and try changing the code from
+          <em class="code">wrap</em> to <em class="code">wrap-reverse</em> or
+          <em class="code">nowrap</em> and see what happens.
+        </p>
+
+
+        <p class="codepen" data-height="300" data-default-tab="result" data-slug-hash="YzExXbZ" data-editable="true"
+          data-user="josiahstephens"
+          style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+          <span>See the Pen <a href="https://codepen.io/josiahstephens/pen/YzExXbZ">
+              Flex Box Part 3</a> by JJ Stephens (<a href="https://codepen.io/josiahstephens">@josiahstephens</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+        <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+        <p>
+          Wrap, like the other flex properties, is dynamic. This means that if a user resizes the window, the flex items
+          will rearrange based on how much room is available. If you were making a gallery of pictures, for example,
+          using
+          flex wrap would make it so that the pictures move to the next line before they are cut off from the view.
+        </p>
+        <h2>Flex Containers in Flex Containers</h2>
+        <p>
+          Sometimes a single flex box isn't enough to get your content to look exactly how you would like it. In these
+          cases, a good option is to embed flex containers in other flex containers. Flex
+          containers can hold other flex containers inside of them. The embedded flex container acts as a flex
+          item in the parent container. Below is an example of a situation where this could be useful.
+        </p>
+        <p class="codepen" data-height="300" data-default-tab="result" data-slug-hash="JjOyYGK" data-editable="true"
+          data-user="josiahstephens"
+          style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+          <span>See the Pen <a href="https://codepen.io/josiahstephens/pen/JjOyYGK">
+              Flex Box Part 4</a> by JJ Stephens (<a href="https://codepen.io/josiahstephens">@josiahstephens</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+        <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+        <p>
+          As you can probably tell, using flex containers inside of other flex containers can be very powerful. Dynamic
+          menus, forms, and articles can be quickly and easily made with only a few lines of code.
+        </p>
+      </section>
+      <section>
+        <h2>Flex Item Properties</h2>
+        <p>
+          Some flex properties should be applied directly to flex items inside of flex boxes instead of to the
+          containers
+          themselves. These properties include <em class="code">flex-grow</em>, <em class="code">flex-shrink</em>, <em
+            class="code">flex-basis</em>, and <em class="code">order</em>. The former two (<em
+            class="code">flex-grow</em> and <em class="code">flex-shrink</em>)
+          basically tell the browser to try to make the items change size if possible. In the example below, I added the
+          flex-grow property in the CSS code. This made the “contact info” and “things I like to do” grow to fill
+          the container if there is room to grow. Similarly flex-shrink allows items to shrink if there is not enough
+          room
+          in the container.
+        </p>
+        <p class="codepen" data-height="300" data-default-tab="result" data-slug-hash="ExbwKmO" data-editable="true"
+          data-user="josiahstephens"
+          style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+          <span>See the Pen <a href="https://codepen.io/josiahstephens/pen/ExbwKmO">
+              Flex Box Part 5</a> by JJ Stephens (<a href="https://codepen.io/josiahstephens">@josiahstephens</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span>
+        </p>
+        <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+        <p>
+          Often <em class="code">flex-grow</em> and <em class="code">flex-shrink</em> will be enough for you to
+          accomplish your design goals, but sometimes you need
+          to be more specific. <em class="code">Flex-basis</em> is an option that allows you to indicate exactly what
+          percent of the flex
+          container you want the item to fill. I often use this property with images because often images seem to be too
+          large or too small in the flex box. This is an efficient way to ensure that they stay a good size.
+        </p>
+        <p>
+          To change the order of items in a flex box, add the <em class="code">order</em> attribute to a flex child.
+          This is useful for when
+          you
+          want items to appear in a different order than they appear in the HTML. To use <em class="code">order</em>,
+          you need to assign
+          it
+          a value. This value corresponds to the index at which you want the item to appear. Add <em class="code">order:
+            2</em> to the CSS
+          section of the example above. Notice how the order changes.
+        </p>
+      </section>
+      <section>
+        <h2>Conclusion</h2>
+        <p>
+          You should now be able to create a simple column layout using flex boxes! There are many ways to resize,
+          align,
+          and space content on a website. Flex is a new and powerful way to accomplish dynamic layouts quickly and
+          easily.
+          By using flex boxes, web designers can create professional designs that look good on any window size.
+        </p>
+      </section>
+      <section>
+        <h2>References</h2>
+        <p>
+          The <a href="https://www.w3.org/TR/css-flexbox/" target="blank">CSS Flex Box documentation</a> covers flex
+          boxes in complete
+          detail. The documentation covers everything that
+          I
+          was not able to cover in this tutorial, including <em class="code">order</em>, <em
+            class="code">flex-grow</em>, <em class="code">flex-shrink</em>, and <em class="code">flex-basis</em>. This
+          site is
+          somewhat technical but will be very helpful for people who already have a good knowledge of CSS.
+        </p>
+        <p>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/flex" target="blank">Mozilla</a> has a very
+          comprehensive website that explains everything about CSS. The general description of flex
+          boxes is very good, and is more beginner oriented. They also give code examples to show you how to use
+          different
+          flex properties and the syntax associated with them. This is the best resource I found to describe flex boxes
+          in
+          general.
+        </p>
+        <p>
+          <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="blank">CSS Tricks</a> gives a
+          beginner guide to flex boxes that helped me learn a lot about them. They explain alignment
+          very well through examples and graphic depictions. The section on <em class="code">gap</em> is especially good
+          and will help someone
+          who is struggling to grasp exactly how it works.
+        </p>
+        <p>
+          <a href="https://flexboxsheet.com" target="blank">Flexbox cheat sheet</a> is a good resource for intermediate
+          web programmers who already understand the basic
+          concepts of flex boxes but struggle to remember the syntax. The site has a list of all the different ways to
+          style a flex container organized neatly for easy reference.
+        </p>
+        <p>
+          <a href="https://flexboxfroggy.com" target="blank">Flexbox Froggy</a> is an interactive game that gives you
+          hands-on practice at using the flex box property. My
+          first introduction to flex boxes was through Flexbox Froggy. The game has 24 levels that go over the basics of
+          flex
+          box, including <em class="code">justify-content</em> and <em class="code">align-items</em>. It is a really
+          good resource for somebody who has never made a flex box.
+        </p>
+      </section>
+    </article>
+  </main>
+  <footer>
+    <p>
+      JJ Stephens — 2022
+    </p>
+  </footer>
+</body>
+
+</html>

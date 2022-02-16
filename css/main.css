@@ -8,6 +8,7 @@
   --light-gray: #e9eaec;
   --white: #ffffff;
   --yellow: #fad02c;
+  --orange: #cc7a00;
   --overlay: rgba(0, 0, 0, 0.4);
   background-color: var(--white);
 }
@@ -237,21 +238,16 @@ picture img {
   height: 100%;
 }
 
-h1,
-h2,
-h3 {
-  line-height: 1;
-  margin-top: 0;
-}
-
 h1 {
   font-size: 3.5rem;
   font-weight: 500;
+  max-width: 90%;
 }
 
 h2 {
   font-size: 2rem;
-  /* padding-top: 2rem; */
+  padding-top: 2rem;
+  padding-bottom: 0.5rem;
 }
 
 aside h2 {
@@ -274,6 +270,10 @@ a:link {
   text-decoration: none;
 }
 
+.no-padding {
+  padding: 0;
+}
+
 /* a:active,
 a:focus {
   color: var(--navy);
@@ -286,6 +286,11 @@ a:focus {
 .dead-link:hover {
   text-decoration: none;
   color: var(--scorpion);
+}
+
+em.code {
+  font-style: normal;
+  color: var(--orange);
 }
 
 main {
@@ -340,11 +345,34 @@ article h2 {
   flex: 1 1 60%;
 }
 
-section {
-  margin: 0 auto;
-  max-width: 100rem;
-  padding: 0 1rem;
+/* definitions grid */
+
+.justify-content-definitions {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 1rem;
 }
+
+.justify-content-definitions div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--light-gray);
+  padding: 1rem;
+}
+
+.justify-content-definitions dt {
+  color: var(--navy);
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.justify-content-definitions dd {
+  margin: 0;
+}
+
+/* end definitions grid */
 
 .button {
   background-color: var(--scorpion);
@@ -527,7 +555,6 @@ header .dead-link:hover {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  /* padding: 1rem; */
 }
 
 .cards img {
@@ -591,7 +618,7 @@ aside article {
 }
 
 /* Loading 
-    stolen from Tashfeen on codepen
+    used from Tashfeen on codepen
 */
 .form .image-wrap:nth-child(2) {
   order: 1;
