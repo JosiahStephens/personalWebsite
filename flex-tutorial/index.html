@@ -69,7 +69,7 @@
           As described in the name, a CSS flex box is flexible and is generally used as a dynamic way to align and
           resize
           content.
-          Although flex boxes are a relatively new addition to CSS, they are supported in <a
+          Although flex boxes are a relatively new addition to CSS, they are supported by <a
             href="https://caniuse.com/?search=flex" target="blank">all major browsers</a>. In this tutorial, I will show
           you how to create and use the flex property to position data in rows and columns. By the end you should be
           able to create a simple column layout using CSS flex boxes.
@@ -151,8 +151,9 @@
             on <a href="https://codepen.io">CodePen</a>.</span>
         </p>
         <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
-
-        <h3>Alignment</h3>
+      </section>
+      <section>
+        <h2>Alignment</h2>
         <p>
           Justify content can be used to align content in a flex container as well. The alignment options for <em
             class="code">justify-content</em> are flex-start, flex-end, and
@@ -227,9 +228,10 @@
           themselves. These properties include <em class="code">flex-grow</em>, <em class="code">flex-shrink</em>, <em
             class="code">flex-basis</em>, and <em class="code">order</em>. The former two (<em
             class="code">flex-grow</em> and <em class="code">flex-shrink</em>)
-          basically tell the browser to try to make the items change size if possible. In the example below, I added the
+          basically tell the browser to try to make the items change size if possible. Giving them the value of 1 sets
+          them to true, and giving them the value of zero sets them to false. In the example below, I added the
           flex-grow property in the CSS code. This made the “contact info” and “things I like to do” grow to fill
-          the container if there is room to grow. Similarly flex-shrink allows items to shrink if there is not enough
+          the container since there is room to grow. Similarly flex-shrink allows items to shrink if there is not enough
           room
           in the container.
         </p>
