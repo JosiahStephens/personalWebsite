@@ -349,8 +349,8 @@ article h2 {
 
 .justify-content-definitions {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
   gap: 1rem;
 }
 
@@ -792,6 +792,13 @@ aside article {
 
   .project-card .panel h3 {
     margin-top: 0;
+  }
+
+  .justify-content-definitions {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 1rem;
   }
 }
 
