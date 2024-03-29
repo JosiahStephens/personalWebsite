@@ -62,9 +62,8 @@
           professors. Outside of school I like board games, playing sports, coding, and learning new things.
         </p>
         <p>
-          As a student, I am exposed to many different aspects of computer science. Right now, my interests include both
-          software devolopment and data science, which have influenced me to learn python and swift. One day I
-          hope to become an expert in one of these fields.
+          As a student, I am exposed to many different aspects of computer science. Right now, I work at Bellu as a
+          Software Engineer. I am also a club officer in the BYU Dev Club. I am excited to see where my career takes me.
         </p>
       </div>
       <div class="image-wrap">
@@ -145,9 +144,15 @@
   </main>
   <footer>
     <p>
-      JJ Stephens — 2022
+      JJ Stephens — <span id="currentYear"></span>
     </p>
   </footer>
 </body>
+<script>
+  // Get the span element where the year will be displayed
+  const currentYearSpan = document.getElementById("currentYear");
 
+  // Update the text content of the span with the current year
+  currentYearSpan.textContent = new Date().getFullYear();
+</script>
 </html>
