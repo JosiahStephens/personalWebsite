@@ -47,9 +47,16 @@
 
   <footer>
     <p>
-      JJ Stephens — 2022
+      JJ Stephens — <span id="currentYear"></span>
     </p>
   </footer>
 </body>
+<script>
+  // Get the span element where the year will be displayed
+  const currentYearSpan = document.getElementById("currentYear");
+
+  // Update the text content of the span with the current year
+  currentYearSpan.textContent = new Date().getFullYear();
+</script>
 
 </html>
